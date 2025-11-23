@@ -1,0 +1,27 @@
+/* Делаем карточку горизонтальной */
+.hp-listings.hp-listings--view-block.hp-listings--grid
+  .hp-listing.hp-listing--view-block {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* картинка слева, фиксированной ширины */
+.hp-listings--view-block .hp-listing--view-block .hp-listing__image {
+    flex: 0 0 220px;
+    max-width: 220px;
+    margin-right: 24px;
+}
+
+/* контент справа на всю оставшуюся ширину */
+.hp-listings--view-block .hp-listing--view-block .hp-listing__content {
+    flex: 1 1 auto;
+}
+
+/* строка: слева название, справа "Соцсети: Нет" */
+.hp-listing__title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
