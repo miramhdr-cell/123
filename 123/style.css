@@ -19,6 +19,27 @@
     flex-wrap:wrap;
     align-items:flex-start;
     margin-bottom:24px;
+    background:#fff;
+    border:1px solid #e7ecf1;
+    border-radius:14px;
+    box-shadow:0 6px 24px rgba(17, 24, 39, 0.06);
+    padding:18px;
+    transition:transform .15s ease, box-shadow .15s ease;
+}
+
+/* общее состояние текста */
+.hp-listings .hp-listing,
+.hp-listings .hp-listing__content,
+.hp-listings .hp-listing__details,
+.hp-listings .hp-listing__attributes,
+.hp-listings .hp-listing__body,
+.hp-listings .hp-listing__meta,
+.hp-listings .hp-listing__footer{
+    color:#0f172a;
+}
+
+.hp-listings .hp-listing__content > * + *{
+    margin-top:10px;
 }
 
 /* картинка слева */
@@ -26,6 +47,9 @@
     flex:0 0 220px;
     max-width:220px;
     margin-right:24px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 /* контент справа */
@@ -47,4 +71,161 @@
     justify-content:space-between;
     align-items:center;
     gap:16px;
+    flex-wrap:wrap;
+}
+
+.hp-listings .hp-listing__title,
+.hp-listings .hp-listing__name{
+    margin:0;
+}
+
+/* карточка: эстетичные отступы, тень и плавный ховер */
+.hp-listings .hp-listing:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 32px rgba(17, 24, 39, 0.12);
+}
+
+/* изображение с корректным соотношением сторон */
+.hp-listings .hp-listing__header img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .25s ease;
+}
+
+.hp-listings .hp-listing:hover .hp-listing__header img{
+    transform:scale(1.02);
+}
+
+/* заголовок и ссылка объявления */
+.hp-listings .hp-listing__title a,
+.hp-listings .hp-listing__name a{
+    color:#0f172a;
+    font-weight:700;
+    text-decoration:none;
+    font-size:1.05rem;
+}
+
+.hp-listings .hp-listing__title a:hover,
+.hp-listings .hp-listing__name a:hover{
+    color:#2563eb;
+}
+
+/* краткое описание и мета-блоки */
+.hp-listings .hp-listing__details,
+.hp-listings .hp-listing__attributes,
+.hp-listings .hp-listing__body,
+.hp-listings .hp-listing__meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 14px;
+    align-items:center;
+    margin-top:10px;
+}
+
+.hp-listings .hp-listing__attributes .hp-badge,
+.hp-listings .hp-listing__meta .hp-meta__item,
+.hp-listings .hp-listing__details .hp-listing__attribute{
+    background:#f8fafc;
+    color:#0f172a;
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:0.9rem;
+    line-height:1.4;
+}
+
+.hp-listings .hp-listing__meta .hp-meta__item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:600;
+    color:#1f2937;
+}
+
+.hp-listings .hp-listing__body,
+.hp-listings .hp-listing__description{
+    color:#475569;
+    line-height:1.6;
+}
+
+.hp-listings .hp-listing__body p,
+.hp-listings .hp-listing__description{
+    margin:0;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/* цена и дополнительные ярлыки */
+.hp-listings .hp-listing__price,
+.hp-listings .hp-listing__badge{
+    font-weight:700;
+    color:#2563eb;
+    background:rgba(37,99,235,0.08);
+    border-radius:10px;
+    padding:6px 12px;
+    line-height:1.3;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+
+.hp-listings .hp-listing__price{
+    font-size:1.02rem;
+    letter-spacing:0.01em;
+}
+
+.hp-listings .hp-listing__badge{
+    text-transform:uppercase;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+}
+
+/* выравнивание футера */
+.hp-listings .hp-listing__footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    padding-top:12px;
+    border-top:1px solid #e5e7eb;
+}
+
+.hp-listings .hp-listing__actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+/* адаптивность */
+@media (max-width: 960px){
+    .hp-listings .hp-listing{
+        padding:16px;
+    }
+
+    .hp-listings .hp-listing__header{
+        flex:0 0 180px;
+        max-width:180px;
+        margin-right:18px;
+    }
+}
+
+@media (max-width: 768px){
+    .hp-listings .hp-listing{
+        flex-direction:column;
+    }
+
+    .hp-listings .hp-listing__header{
+        flex:0 0 auto;
+        max-width:100%;
+        width:100%;
+        margin:0 0 14px;
+    }
+
+    .hp-listings .hp-listing__footer{
+        flex-direction:column;
+        align-items:flex-start;
+    }
 }
