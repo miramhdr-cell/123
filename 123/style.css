@@ -1,27 +1,50 @@
-/* Делаем карточку горизонтальной */
-.hp-listings.hp-listings--view-block.hp-listings--grid
-  .hp-listing.hp-listing--view-block {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
+/*
+ Theme Name: 123
+ Template: listinghive
+ Description: Child theme for ListingHive
+ Version: 1.0.0
+*/
+/* ОДНА КАРТОЧКА В РЯД + ГОРИЗОНТАЛЬНО */
+
+/* одна карточка на строку */
+.hp-listings .hp-grid__item{
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
-/* картинка слева, фиксированной ширины */
-.hp-listings--view-block .hp-listing--view-block .hp-listing__image {
-    flex: 0 0 220px;
-    max-width: 220px;
-    margin-right: 24px;
+/* карточка горизонтально */
+.hp-listings .hp-listing{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    margin-bottom:24px;
 }
 
-/* контент справа на всю оставшуюся ширину */
-.hp-listings--view-block .hp-listing--view-block .hp-listing__content {
-    flex: 1 1 auto;
+/* картинка слева */
+.hp-listings .hp-listing__header{
+    flex:0 0 220px;
+    max-width:220px;
+    margin-right:24px;
+}
+
+/* контент справа */
+.hp-listings .hp-listing__content{
+    flex:1 1 auto;
+    display:flex;
+    flex-direction:column;
+}
+
+/* футер под контентом */
+.hp-listings .hp-listing__footer{
+    flex:1 0 100%;
+    margin-top:12px;
 }
 
 /* строка: слева название, справа "Соцсети: Нет" */
-.hp-listing__title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
+.hp-listing__title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
 }
