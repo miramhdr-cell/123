@@ -50,6 +50,8 @@
     border-radius:12px;
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    background:#f8fafc;
+    aspect-ratio:4 / 3;
 }
 
 /* контент справа */
@@ -122,6 +124,7 @@
     gap:10px 14px;
     align-items:center;
     margin-top:10px;
+    line-height:1.5;
 }
 
 .hp-listings .hp-listing__attributes .hp-badge,
@@ -170,6 +173,7 @@
     display:inline-flex;
     align-items:center;
     gap:6px;
+    white-space:nowrap;
 }
 
 .hp-listings .hp-listing__price{
@@ -227,5 +231,20 @@
     .hp-listings .hp-listing__footer{
         flex-direction:column;
         align-items:flex-start;
+    }
+}
+
+@media (max-width: 540px){
+    .hp-listings .hp-listing{
+        padding:14px;
+    }
+
+    .hp-listings .hp-listing__title a,
+    .hp-listings .hp-listing__name a{
+        font-size:1rem;
+    }
+
+    .hp-listings .hp-listing__price{
+        font-size:0.98rem;
     }
 }
